@@ -8,6 +8,17 @@ public class BooleanDecisionNode extends DecisionNode {
         super(prompt);
     }
 
+    @Override
+    DecisionNode makeDecision(String s) {
+        if(s.equals("yes")) return yes;
+        return no;
+    }
+
+    @Override
+    String getPromptWithOptions() {
+        return prompt +  " (yes or no): ";
+    }
+
     public BooleanDecisionNode(String prompt, DecisionNode yes, DecisionNode no) {
         super(prompt);
         this.yes = yes;

@@ -6,4 +6,8 @@ abstract public class DecisionNode {
     public DecisionNode(String prompt) {
         this.prompt = prompt;
     }
+
+    abstract DecisionNode makeDecision(String s) throws InvalidDecisionException;
+
+    abstract String getPromptWithOptions();
 }
